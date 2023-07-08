@@ -138,15 +138,14 @@ button {
 
 #center #habit-list ul li {
     cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 10px;
 }
 
-#center #habit-list ul li:hover button {
-    display: inline;
-}
 
 #center #habit-list ul li button {
     margin: 0 5px;
-    display: none;
 }
 
 /* Shop */
