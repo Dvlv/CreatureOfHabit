@@ -1,0 +1,156 @@
+/* Global */
+
+button {
+    cursor: pointer;
+}
+
+/* Menu */
+
+#main {
+    background: linear-gradient(skyblue, lightgreen);
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+#menu {
+    height: 80%;
+    background: red;
+    margin: auto 0;
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#menu button {
+    width: 80%;
+    height: 20%;
+    margin: 5% 0;
+    padding: 20px;
+    background: #dadada;
+    color: #000;
+    border-radius: 10px;
+    border: 1px solid #ababab;
+    font-size: 1.2rem;
+}
+
+#menu button:hover,
+#menu button:active {
+    background: #efefef;
+}
+
+/* center */
+
+#center {
+    height: 90%;
+    background: yellow;
+    width: 60%;
+    margin: auto 0;
+    font-size: 1.3rem;
+
+}
+
+#center #resources {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#center #habit-form-wrapper {
+    background: lightgrey;
+    border: 1px solid black;
+    border-radius: 10px;
+    margin: 0 auto;
+    width: 50%;
+}
+
+#center #habit-form .form-field {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin: 15px 0;
+    width: 100%;
+}
+
+#center #habit-form {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#center #habit-form .form-field label {
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+#center #habit-form .form-field input[type="text"] {
+    padding: 5px;
+    font-size: 1.1rem;
+}
+
+#center #habit-form .form-field button {
+    background: darkblue;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 10px;
+    border: 1px solid blue;
+    font-size: 1.2rem;
+    width: 75%;
+    cursor: pointer;
+}
+
+#center #habit-form .form-field button.cancel {
+    background: #efefef;
+    color: black;
+    border: 1px solid #777;
+}
+
+#center #habit-form .form-field input+label {
+    font-weight: normal;
+}
+
+#center #habit-list {
+    background: pink;
+    border: 1px solid red;
+    border-radius: 10px;
+    text-align: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#center #habit-list div {
+    width: 25%;
+}
+
+/* Shop */
+
+#shop {
+    height: 80%;
+    background: blue;
+    width: 20%;
+    margin: auto 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#shop button#show-shop {
+    width: 80%;
+    height: 20%;
+    margin: 5% 0;
+    padding: 20px;
+    background: #dadada;
+    color: #000;
+    border-radius: 10px;
+    border: 1px solid #ababab;
+    font-size: 1.2rem;
+}

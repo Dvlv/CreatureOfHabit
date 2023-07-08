@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Creature Of Habit</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" rel="stylesheet" href="creature-of-habit.css">
+</head>
+
+<body>
+    <div id="main">
+        <div id="menu">
+            <button onclick="showHabitForm()">Add Habit</button>
+            <button onclick="showHabitList()">View / Edit Habits</button>
+            <button>Log Habit</button>
+            <button>View Calendar</button>
+        </div>
+        <div id="center">
+            <div id="resources">
+                <div id="coins"></div>
+                <div id="date-time"></div>
+                <div id="streak"></div>
+            </div>
+            <div id="creature"></div>
+            <div id="calendar" style="display:none;"></div>
+            <div id="habit-form-wrapper" style="display:none;">
+                <form id="habit-form" onsubmit="validateAndSubmitHabitForm(); return false">
+                    <div class="form-field">
+                        <label for="action">Action</label>
+                        <input type="text" id="action" name="action">
+                    </div>
+                    <div class="form-field">
+                        <label for="action">Frequency</label>
+                        <div id="frequency">
+                            <div class="freq">
+                                <input type="checkbox" value="1" name="Mon" id="Mon">
+                                <label for="Mon">Monday</label>
+                            </div>
+                            <div class="freq">
+                                <input type="checkbox" value="1" name="Tues" id="Tues">
+                                <label for="Tues">Tuesday</label>
+                            </div>
+                            <div class="freq">
+                                <input type="checkbox" value="1" name="Wed" id="Wed">
+                                <label for="Wed">Wednesday</label>
+                            </div>
+                            <div class="freq">
+                                <input type="checkbox" value="1" name="Thurs" id="Thurs">
+                                <label for="Thurs">Thursday</label>
+                            </div>
+                            <div class="freq">
+                                <input type="checkbox" value="1" name="Fri" id="Fri">
+                                <label for="Fri">Friday</label>
+                            </div>
+                            <div class="freq">
+                                <input type="checkbox" value="1" name="Sat" id="Sat">
+                                <label for="Sat">Saturday</label>
+                            </div>
+                            <div class="freq">
+                                <input type="checkbox" value="1" name="Sun" id="Sun">
+                                <label for="Sun">Sunday</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-field">
+                        <button>Save</button>
+                    </div>
+                    <div class="form-field">
+                        <button type="button" onclick="closeHabitForm()" class="cancel">Cancel</button>
+                    </div>
+                </form>
+            </div>
+
+            <div id="habit-list" style="display:none;">
+                <div id="Mon">
+                    <h3>Mon</h3>
+                    <ul class="habits">
+                    </ul>
+                </div>
+                <div id="Tues">
+                    <h3>Tues</h3>
+                    <ul class="habits">
+                    </ul>
+                </div>
+                <div id="Wed">
+                    <h3>Wed</h3>
+                    <ul class="habits">
+                    </ul>
+                </div>
+                <div id="Thurs">
+                    <h3>Thurs</h3>
+                    <ul class="habits">
+                    </ul>
+                </div>
+                <div id="Fri">
+                    <h3>Fri</h3>
+                    <ul class="habits">
+                    </ul>
+                </div>
+                <div id="Sat">
+                    <h3>Sat</h3>
+                    <ul class="habits">
+                    </ul>
+                </div>
+                <div id="Sun">
+                    <h3>Sun</h3>
+                    <ul class="habits">
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div id="shop">
+            <button id="show-shop">Browse</button>
+            <div id="shop-items" style="display:none;"></div>
+        </div>
+    </div>
+</body>
+
+<script type="text/javascript" src="creature-of-habit.js"></script>
+
+</html>
