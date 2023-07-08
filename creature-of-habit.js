@@ -42,8 +42,87 @@ function deserializeDaysHabitsFromStorage() {
     return deserialized;
 }
 
-function getTodaysHabits() {
+function deserializeLogFromStorage() {
+    var log = localStorage.getItem('log');
+    if (!log) {
+        localStorage.setItem('log', JSON.stringify({}));
+    }
+    return log ? JSON.parse(log) : {};
+}
+
+function exportToString() {
+    return btoa(JSON.stringify(localStorage));
+}
+
+function importFromString(string) {
+    var importedData = JSON.parse(atob(string));
+    localStorage.setItem('log', importedData['log']);
+    localStorage.setItem('habits', importedData['habits']);
+    localStorage.setItem('daysHabits', importedData['daysHabits']);
+}
+
+function showTodaysHabitLog() {
+    // TODO browser's locale
+    var today = new Date().toLocaleDateString('en-GB', {weekday: 'short'});
+    var daysHabits = deserializeDaysHabitsFromStorage();
+
+    const todaysHabits = daysHabits[today];
+
+    const todaysLog = getTodaysHabitLog();
+
+    const target = document.getElementById('todays-habits-form');
+    const ul = document.createElement('ul');
+
+    todaysHabits.forEach(habit => {
+        const li = document.createElement('li');
+        const cb = document.createElement('input');
+        cb.type = 'checkbox';
+        cb.name = habit.id;
+        cb.value = '1';
+
+        if (todaysLog.includes(habit.id)) {
+            cb.checked = '1';
+        }
+
+        const lbl = document.createElement('label')
+        lbl.innerText = habit.action;
+        lbl.prepend(cb);
+
+        li.appendChild(lbl);
+        ul.appendChild(li);
+    });
+
+    target.prepend(ul);
+
+    document.getElementById('todays-habits').style.display = 'block';
+}
+
+function getTodayYYYYMMDD() {
     var today = new Date();
+
+    return today.toISOString().split('T')[0];
+}
+
+function saveTodaysHabitLog() {
+    var log = deserializeLogFromStorage();
+    var today = getTodayYYYYMMDD();
+
+    log[today] = [];
+
+    var fd = new FormData(document.forms['todays-habits-form']);
+    for (const pair of fd.entries()) {
+        var habitId = pair[0];
+        log[today].push(habitId)
+    }
+
+    localStorage.setItem('log', JSON.stringify(log));
+}
+
+function getTodaysHabitLog() {
+    var log = deserializeLogFromStorage();
+    var today = getTodayYYYYMMDD();
+
+    return log[today];
 }
 
 function showHabitForm() {
