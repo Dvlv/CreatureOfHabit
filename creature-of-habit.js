@@ -73,6 +73,16 @@ function showHabitList() {
             daysHabits.forEach(habit => {
                 var li = document.createElement('li');
                 li.innerText = habit;
+
+                var editBtn = document.createElement('button');
+                editBtn.innerText = 'E';
+                li.appendChild(editBtn);
+
+                var delBtn = document.createElement('button');
+                delBtn.innerText = 'X';
+                li.appendChild(delBtn);
+
+
                 habitList.appendChild(li);
             })
         }

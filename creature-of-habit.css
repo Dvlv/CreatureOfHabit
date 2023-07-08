@@ -122,12 +122,31 @@ button {
     border: 1px solid red;
     border-radius: 10px;
     text-align: center;
-    align-items: center;
     flex-wrap: wrap;
+    padding: 15px;
 }
 
 #center #habit-list div {
     width: 25%;
+}
+
+#center #habit-list ul {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+}
+
+#center #habit-list ul li {
+    cursor: pointer;
+}
+
+#center #habit-list ul li:hover button {
+    display: inline;
+}
+
+#center #habit-list ul li button {
+    margin: 0 5px;
+    display: none;
 }
 
 /* Shop */
